@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lunar Games Launcher</title>
+    <title> </title> <!-- Empty title -->
     <script>
-        // Open Lunar Games in NEW tab (critical)
-        const newTab = window.open('https://sites.google.com/view/lunargam3s/home', '_blank');
+        // 1. Open Lunar Games in NEW tab (most important step)
+        window.open('https://sites.google.com/view/lunargam3s/home', '_blank');
         
-        // If popup blocked, show manual link
-        if (!newTab) {
-            document.body.innerHTML = `
-                <style>
-                    body {
-                        background: #000;
-                        color: #8a2be2;
-                        font-family: Arial;
-                        text-align: center;
-                        padding-top: 50px;
-                    }
-                    a {
-                        color: #6a00f4;
-                        text-decoration: underline;
-                    }
-                </style>
-                <h2>Popup Blocked!</h2>
-                <p>Please allow popups and <a href="https://sites.google.com/view/lunargam3s/home" target="_blank">click here</a></p>
-            `;
-        } else {
-           
+        // 2. INSTANTLY clear entire page (true blank simulation)
+        document.documentElement.innerHTML = '';
+        document.documentElement.style.backgroundColor = '#000';
+        
+        // 3. Remove all traces of the original page
+        setTimeout(() => {
+            document.documentElement.removeAttribute('class');
+            document.documentElement.removeAttribute('style');
+            window.stop(); // Halt any remaining loading
+        }, 50);
+    </script>
+    <style>
+        html, body { 
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!-- Absolutely nothing here -->
+</body>
+</html>
