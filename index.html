@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lunar Games - Launching...</title>
+    <title>Redirecting...</title>
     <script>
-        // 1. Open Lunar Games IMMEDIATELY in new tab
-        window.open('https://sites.google.com/view/lunargam3s/home', '_blank');
+        // 1. Open Lunar Games in NEW TAB
+        const newTab = window.open('https://sites.google.com/view/lunargam3s/home', '_blank');
         
-        // 2. Clear current page content
-        document.body.innerHTML = '<style>body{background:#000;margin:0;height:100vh;display:flex;justify-content:center;align-items:center;color:#fff;font-family:Arial}</style><div>Launch successful!</div>';
+        // 2. INSTANTLY clear current page (no delay)
+        document.body.innerHTML = '';
+        document.body.style.backgroundColor = '#000';
         
-        // 3. Attempt about:blank (works in Chrome/Firefox)
-        setTimeout(function(){
-            window.location.href = 'about:blank';
-        }, 300);
+        // 3. Force about:blank (works in Chrome/Firefox)
+        setTimeout(() => {
+            try {
+                window.location.replace('about:blank');
+            } catch(e) {
+                // Fallback: Page is already blank
+            }
+        }, 50);
     </script>
+    <style>
+        body { margin: 0; background: #000; }
+    </style>
 </head>
 <body>
-    <!-- Fallback for slow JS -->
-    <p>Redirecting to Lunar Games...<br>
-    <a href="https://sites.google.com/view/lunargam3s/home" target="_blank">Click here if nothing happens</a></p>
+    <!-- Empty page -->
 </body>
 </html>
