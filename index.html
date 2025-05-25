@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lunar Games - Redirecting</title>
+    <script>
+        // Open Lunar Games in new tab
+        const newTab = window.open('https://sites.google.com/view/lunargam3s/home', '_blank');
+        
+        // Clear current page
+        document.body.innerHTML = '';
+        document.body.style.backgroundColor = 'black';
+        
+        // Try to redirect to about:blank (works in some browsers)
+        setTimeout(() => {
+            try {
+                window.location.href = 'about:blank';
+            } catch(e) {
+                // Fallback: Page stays blank
+            }
+        }, 100);
+    </script>
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            font-family: Arial;
+        }
+    </style>
+</head>
+<body></body>
+</html>
